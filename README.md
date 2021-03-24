@@ -1,4 +1,4 @@
-# [Deskera](https://www.deskera.com) Coding Test
+# [Deskera](https://www.deskera.com) Hiring Test
 
 ## Problem Statement
 Implement an Employee Manager for a Company so that the HR Admins can
