@@ -4,7 +4,7 @@
 Implement an Employee Manager for a Company so that the HR Admins can
 1. Add a new Employee
 2. Find any Employee by Employee Id
-3. Find all Employees older than X years (So if X = 30 then all employee who are older than 30 years. For e.g. 31, 32, 40, etc but employees with age 30 years are not included)
+3. Find all Employees older than X years (So if X = 30 then all employee who are older than 30 years. For e.g. Employees with age 31, 32, 40, etc but employees with age 30 years are not included)
 3. Delete any Employee at the time of employee exit
 4. List all the current Employees
 
