@@ -28,3 +28,4 @@ Implement an Employee Manager for a Company so that the HR Admins can
 1. The EmployeeManager is in [src/EmployeesManager.java](./src/EmployeesManager.java)
 2. The implement must be in this file only and no new files can be added to the code
 3. Only Java SDK can be used and no other dependencies/ library can be used
+4. `Fork` the repository, keep it public and while submission, provide your repository URL.
