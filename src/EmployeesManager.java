@@ -1,4 +1,6 @@
 import java.util.Collection;
+import java.utils.*;
+import java.times;
 
 public class EmployeesManager {
 
@@ -14,8 +16,10 @@ public class EmployeesManager {
    * @return
    */
   String addEmployee(Employee employee) {
-    // TODO - implement this
-    return null;
+    List<Employee> mEmployees = new ArrayList<Employee>()
+    if (mEmployees.contains(employee)) throw new IllegalArgumentException("Employee already exists");
+
+    return mEmployees.add(employee);
   }
 
   /**
@@ -25,8 +29,9 @@ public class EmployeesManager {
    * @return
    */
   Employee findEmployee(String employeeId) {
-    // TODO - implement this
-    return null;
+    List<Employee> el = new ArrayList<Employee>();
+    Employee es = (Employee)el.get(employeeId);
+    return es;
   }
 
   /**
@@ -35,7 +40,9 @@ public class EmployeesManager {
    * @return
    */
   Collection<Employee> findEmployee(int years) {
-    return null;
+    List<Employee> empList = new ArrayList<>();
+    Period period = Period.between(getAgeInYears, LocalDate.now());
+     return empList.stream().filter(emp->emp.period.getYears() > 30).collect(Collectors.toList());
   }
 
   /**
@@ -45,7 +52,12 @@ public class EmployeesManager {
    * @return
    */
   boolean removeEmployee(String employeeId) {
-    // TODO - implement this
+    List<Employee> mEmployees = new ArrayList<Employee>();
+    
+    if (mEmployees.contains(employee)) {
+        mEmployees.remove(employeeId);
+        return true;
+    }
     return false;
   }
 
@@ -55,8 +67,16 @@ public class EmployeesManager {
    * @return
    */
   Collection<Employee> listEmployees() {
-    // TODO - implement this
-    return null;
+    List<Employee> employeeList = new ArrayList<Employee>();
+    
+		System.out.println("List of all Employees");
+		try (ResultSet rst = pst1.executeQuery()) {
+			while (rst.next())
+				candidates.add(new Candidate(rst.getInt(1), rst.getString(2), rst.getString(3), rst.getInt(4)));
+		}
+		return candidates;
+
+    return employeeList;
   }
 }
 
@@ -71,7 +91,16 @@ class Employee {
   private String employeeId;
 
   public Employee(String fullName, String birthDate) {
-    // TODO - implement this
+    
+    String firstName = fullName.substring(0, fullName.length() - surName.length());
+    System.out.println(firstName );
+    String surName=fullName.split(" ")[fullName.split(" ").length-1];
+    System.out.println(surName);
+    
+    String dateArr[] = birthDate.split("-");
+    String day = dateArr[0];
+    String month = dateArr[1];
+    String year = dateArr[2];
   }
 
   public int getAgeInYears() {
